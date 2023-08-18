@@ -1,0 +1,91 @@
+Feature -- includes StepDefinition(real code) which contains as details in Test Runner.
+
+eclipse -- src/test/java -- create new package --- features
+
+new file in features -- Login.feature
+Feature: Application Login
+
+Scenario: Home page default login
+Given User is on landing page
+When User login into application with username and password
+Then Home page is populated
+And Cards are displayed
+
+eclipse -- src/test/java -- create new package --- stepDefinitions
+
+stepDefinition.java(matches with tagname and description)
+-----
+package stepDefinitions;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+
+public class stepDefinition{
+ @Given("^User is on NetBanking landing page$")
+ public void user_is_on_NetBanking_Landing(){
+    //code user navigato to netbanking landing page
+  }
+ @Given("^User is on loan landing page$")
+ public void user_is_on_NetBanking_Landing(){
+    
+  }
+ @When("^User login into application with username and password$")
+ public void user_is_on_NetBanking_Landing(){
+    //username and password submission
+  }
+ @Then("^User is on NetBanking landing page$")
+ public void user_is_on_NetBanking_Landing(){
+    
+  }
+}
+
+-----
+To generate the code automatically:
+-----
+
+tidy gherkin plugin from chrome webstore.
+to launch it:
+chrome://apps
+write the .feature file content like below and click on java steps button:
+![i1](images/i1.jpg)
+then it will generate the template code
+![i2](images/i2.jpg)
+then can copy the methods inside the class generated in the stepsDefinition.java
+
+------
+Test Runner for JUnit
+---
+
+cucumberOptions\TestRunner.java
+
+package cucumberOptions;
+// import junit related packages
+@Run(Cucumber.class)
+@CucumberOptions(
+  features = "src/test/java/features",
+  glue="stepDefinitions",stepNotifications = true
+)
+public class TestRunner{
+
+}
+
+Right click on TestRunner.java and run as option - JUnit Test
+---------
+## here, instead of Run annotation we use extends keyword to inherit
+## Need to install the testng plugin of eclipse also.To use run as --> testng test
+
+cucumberOptions\TestNgTestRunner.java
+
+package cucumberOptions;
+// import testng related packages
+
+@CucumberOptions(
+  features = "src/test/java/features",
+  glue="stepDefinitions"
+)
+public class TestNgTestRunner extends AbstractTestNGCucumberTests{
+
+}
+
+
+##3 chapter completed
+
