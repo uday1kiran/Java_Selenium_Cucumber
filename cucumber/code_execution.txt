@@ -1,0 +1,41 @@
+Feature -- includes StepDefinition(real code) which contains as details in Test Runner.
+
+eclipse -- src/test/java -- create new package --- features
+
+new file in features -- Login.feature
+Feature: Application Login
+
+Scenario: Home page default login
+Given User is on landing page
+When User login into application with username and password
+Then Home page is populated
+And Cards are displayed
+
+eclipse -- src/test/java -- create new package --- stepDefinitions
+
+stepDefinition.java(matches with tagname and description)
+-----
+package stepDefinitions;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
+
+public class stepDefinition{
+ @Given("^User is on NetBanking landing page$")
+ public void user_is_on_NetBanking_Landing(){
+    //code user navigato to netbanking landing page
+  }
+ @Given("^User is on loan landing page$")
+ public void user_is_on_NetBanking_Landing(){
+    
+  }
+ @When("^User login into application with username and password$")
+ public void user_is_on_NetBanking_Landing(){
+    //username and password submission
+  }
+ @Then("^User is on NetBanking landing page$")
+ public void user_is_on_NetBanking_Landing(){
+    
+  }
+}
+
+completed 03.02

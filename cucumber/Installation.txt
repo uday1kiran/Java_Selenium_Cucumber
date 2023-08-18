@@ -1,0 +1,28 @@
+eclipse plugin: 
+
+help -- eclipse marketplace -- 
+cucumber eclipe plugin
+Natural 0.7.6
+
+cucumber project skeleton can be obtained by Maven
+
+file -- new -- other -- maven -- maven project
+template: Artifact id: maven-archetype-quickstart
+
+group id(package name):  Cucumber
+artifact id(project name): Automation
+
+src/test/java
+Cucumber.Automaton
+AppTest.java
+
+Right click on project(root directory) -- configure -- convert to cucumber project
+
+pom.xml
+---
+junit will be there by default, add if not there
+cucumber-java
+cucumber-junit
+
+https://mvnrepository.com/artifact/io.cucumber/cucumber-java/6.10.4
+https://mvnrepository.com/artifact/io.cucumber/cucumber-junit/6.10.4
